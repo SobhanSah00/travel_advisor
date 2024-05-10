@@ -1,35 +1,15 @@
-import react from "react";
-import { CssBaseline, Grid} from "@mui/material";
-
-
-import Header from './components/Header/Header'
-import Map from './components/Map/Map'
-import List from './components/List/List'
-import PlaceDetails from './components/PlaceDetails/PlaceDetail'
+// src/App.js
+import React from 'react';
+import Map from './components/loadMaps';
 
 const App = () => {
+  const apikey = 'BvElSU_6ORy-y4Hr0gdQArx_YH7AXPerjOzIsj0QgdQ';
+
   return (
-    <>
-      <CssBaseline/>
-
-      <Header />
-
-      <Grid container spacing={3} style={{with : '100%'}}>
-        <Grid item xs={12} md={4}>
-          <List />
-        </Grid>
-        <Grid item xs={12} md={8}>
-          <Map />
-        </Grid>
-      </Grid>
-
-      <List/>
-
-      <Map />
-      
-      <PlaceDetails />
-    </>
-  )
+    <div className="app bg-gray-100 min-h-screen flex items-center justify-center">
+      <Map apikey={apikey} />
+    </div>
+  );
 }
 
-export default App
+export default App;
